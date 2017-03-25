@@ -9,6 +9,12 @@ function isDirectory(filePath, callback) {
   });
 }
 
+function hasMetaCpp(filePath, callback) {
+  fs.exists(path.join(filePath, 'meta.cpp'), function (exists) {
+    callback(null, exists);
+  });
+}
+
 module.exports = function (steamDirectory, callback) {
   var dir = modsDirectory(steamDirectory);
   fs.readdir(dir, function (err, files) {
@@ -16,6 +22,12 @@ module.exports = function (steamDirectory, callback) {
       return path.join(dir, fileName);
     });
 
-    async.filter(files, isDirectory, callback);
+    async.filter(files, isDirectory, function (err, files) {
+      if (err) {
+        return callback(err);
+      }
+
+      async.filter(files, hasMetaCpp, callback);
+    });
   });
 }
