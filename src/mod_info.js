@@ -10,6 +10,7 @@ module.exports = function (modPath, callback) {
     callback(null, {
       id: metadata.publishedid,
       name: metadata.name,
+      path: modPath,
     });
   });
 }
