@@ -18,6 +18,10 @@ function hasMetaCpp(filePath, callback) {
 module.exports = function (steamDirectory, callback) {
   var dir = modsDirectory(steamDirectory);
   fs.readdir(dir, function (err, files) {
+    if (err) {
+      return callback(err);
+    }
+
     files = files.map(function (fileName) {
       return path.join(dir, fileName);
     });
