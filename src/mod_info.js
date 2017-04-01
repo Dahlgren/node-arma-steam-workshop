@@ -7,8 +7,15 @@ module.exports = function (modPath, callback) {
       return callback(err);
     }
 
+    var id = metadata.publishedid;
+    if (id) {
+      id = id.toString();
+    } else {
+      id = path.basename(modPath)
+    }
+
     callback(null, {
-      id: metadata.publishedid,
+      id: id,
       name: metadata.name,
       path: modPath,
     });

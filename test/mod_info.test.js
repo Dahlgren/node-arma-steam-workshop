@@ -8,9 +8,9 @@ describe('mod info', function () {
   it('should have mod metadata', function (done) {
     modInfo(modPath, function (err, mod) {
       should.not.exist(err);
-      
+
       mod.should.be.a.Object();
-      mod.should.have.property('id', 12345);
+      mod.should.have.property('id', '12345');
       mod.should.have.property('name', 'Test Mod');
 
       done(err);
