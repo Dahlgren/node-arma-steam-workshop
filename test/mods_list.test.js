@@ -12,7 +12,7 @@ describe('mods list', function () {
       var mod = mods[0];
       var modPath = path.join(__dirname, 'data', 'steamapps', 'workshop', 'content', '107410', '12345');
       mod.should.be.a.Object();
-      mod.should.have.property('id', 12345);
+      mod.should.have.property('id', '12345');
       mod.should.have.property('name', 'Test Mod');
       mod.should.have.property('path', modPath);
 
