@@ -2,7 +2,7 @@ var path = require('path');
 var should = require('should');
 var modInfo = require('../src/mod_info');
 
-var modPath = path.join(__dirname, 'data', 'steamapps', 'workshop', 'content', '107410', '12345');
+var modPath = path.join(__dirname, 'data', 'steamapps', 'workshop', 'content', '107410', 'valid-mod');
 
 describe('mod info', function () {
   it('should have mod metadata', function (done) {
