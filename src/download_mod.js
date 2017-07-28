@@ -6,6 +6,6 @@ module.exports = function (options, callback) {
     path: options.path,
     password: options.password,
     username: options.username,
-    workshopId: options.workshopId,
+    workshopId: options.workshopId
   }, callback)
 }

@@ -1,15 +1,15 @@
-var path = require('path');
-var readCpp = require('./read_cpp');
+var path = require('path')
+var readCpp = require('./read_cpp')
 
 module.exports = function (modPath, callback) {
   readCpp(path.join(modPath, 'meta.cpp'), function (err, metadata) {
     if (err) {
-      return callback(err);
+      return callback(err)
     }
 
-    var id = metadata.publishedid;
+    var id = metadata.publishedid
     if (id) {
-      id = id.toString();
+      id = id.toString()
     } else {
       id = path.basename(modPath)
     }
@@ -17,7 +17,7 @@ module.exports = function (modPath, callback) {
     callback(null, {
       id: id,
       name: metadata.name,
-      path: modPath,
-    });
-  });
+      path: modPath
+    })
+  })
 }

@@ -1,6 +1,6 @@
-var filesize = require('filesize');
-var SteamWorkshop = require('steam-workshop');
-var steamWorkshop = new SteamWorkshop();
+var filesize = require('filesize')
+var SteamWorkshop = require('steam-workshop')
+var steamWorkshop = new SteamWorkshop()
 
 const BASE_URL = 'https://steamcommunity.com/sharedfiles/filedetails/'
 
@@ -32,8 +32,7 @@ function createQuery (text, apiKey) {
 
 module.exports = function (text, apiKey, callback) {
   if (!text) {
-    res.status(400).send('Missing text')
-    return
+    return callback(new Error('Missing text parameter'))
   }
 
   steamWorkshop.queryFiles(createQuery(text, apiKey), function (err, mods) {
