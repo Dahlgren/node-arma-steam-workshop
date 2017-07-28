@@ -6,3 +6,4 @@ Node wrapper for handling Steam Workshop content for Arma 3
 Option | Type |  Description
 --- | --- | ---
 path | string | Path to Steam folder
+apiKey | string | Steam Web API Key, https://steamcommunity.com/dev/apikey
