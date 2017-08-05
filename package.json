@@ -28,6 +28,8 @@
   },
   "dependencies": {
     "arma-class-parser": "^0.1.3",
-    "async": "^2.1.4"
+    "async": "^2.1.4",
+    "filesize": "^3.5.10",
+    "steam-workshop": "https://github.com/Dahlgren/node-steam-workshop/tarball/848415dfe21abe77ac346c5339df7b063a7830ec"
   }
 }
