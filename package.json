@@ -30,7 +30,7 @@
     "arma-class-parser": "^0.1.3",
     "async": "^2.1.4",
     "filesize": "^3.5.10",
-    "steamcmd": "https://github.com/Dahlgren/node-steamcmd/tarball/c5e6822287d7588336e42639542617b77ddf161e",
+    "steamcmd": "https://github.com/Dahlgren/node-steamcmd/tarball/a4aa7c0b39b3dfd903597c13bc981eb0e925ba26",
     "steam-workshop": "https://github.com/Dahlgren/node-steam-workshop/tarball/848415dfe21abe77ac346c5339df7b063a7830ec"
   }
 }
