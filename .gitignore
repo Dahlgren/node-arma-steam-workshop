@@ -45,3 +45,6 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
+
+# test data
+test/data/steamapps/workshop/appworkshop_107410.acf
