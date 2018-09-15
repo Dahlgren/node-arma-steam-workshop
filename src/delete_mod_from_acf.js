@@ -1,14 +1,13 @@
-var fs = require('fs')
-var path = require('path')
+var readAcf = require('./acf/read')
+var writeAcf = require('./acf/write')
 var deleteModMetadata = require('./delete_mod_metadata')
 
 module.exports = function (steamDirectory, workshopId, callback) {
-  var filePath = path.join(steamDirectory, 'steamapps', 'workshop', 'appworkshop_107410.acf')
-  fs.readFile(filePath, 'utf8', function (err, text) {
+  readAcf(steamDirectory, function (err, data) {
     if (err) {
       return callback(err)
     }
-    var data = deleteModMetadata(text, workshopId)
-    fs.writeFile(filePath, data, callback)
+    deleteModMetadata(data, workshopId)
+    writeAcf(steamDirectory, data, callback)
   })
 }

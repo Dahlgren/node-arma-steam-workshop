@@ -1,5 +1,3 @@
-var VDF = require('@node-steam/vdf')
-
 function parseSize (size) {
   if (size) {
     return parseInt(size, 10)
@@ -8,8 +6,7 @@ function parseSize (size) {
   return null
 }
 
-module.exports = function (text, workshopId) {
-  var data = VDF.parse(text)
+module.exports = function (data, workshopId) {
   if (data.AppWorkshop) {
     var workshop = data.AppWorkshop
     var sizeOnDisk = parseSize(workshop['SizeOnDisk'])
@@ -20,7 +17,7 @@ module.exports = function (text, workshopId) {
       delete installedItems[workshopId]
 
       if (sizeOnDisk && itemSize) {
-        workshop['SizeOnDisk'] = (sizeOnDisk - itemSize).toString()
+        workshop['SizeOnDisk'] = sizeOnDisk - itemSize
       }
     }
 
@@ -28,5 +25,6 @@ module.exports = function (text, workshopId) {
       delete workshop.WorkshopItemDetails[workshopId]
     }
   }
-  return VDF.stringify(data)
+
+  return data
 }
