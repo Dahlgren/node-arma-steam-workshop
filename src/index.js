@@ -1,6 +1,6 @@
 var deleteMod = require('./delete_mod')
 var downloadMod = require('./download_mod')
-var modsList = require('./mods_list')
+var mods = require('./mods')
 var search = require('./search')
 
 var SteamWorkshop = function (options) {
@@ -9,7 +9,7 @@ var SteamWorkshop = function (options) {
 }
 
 SteamWorkshop.prototype.mods = function (callback) {
-  modsList(this.options.path, callback)
+  mods(this.options.path, this.currentDownloads, callback)
 }
 
 SteamWorkshop.prototype.deleteMod = function (workshopId, callback) {
