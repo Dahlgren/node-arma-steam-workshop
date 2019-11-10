@@ -9,15 +9,15 @@ function parseSize (size) {
 module.exports = function (data, workshopId) {
   if (data.AppWorkshop) {
     var workshop = data.AppWorkshop
-    var sizeOnDisk = parseSize(workshop['SizeOnDisk'])
+    var sizeOnDisk = parseSize(workshop.SizeOnDisk)
     var installedItems = workshop.WorkshopItemsInstalled
 
     if (installedItems && installedItems[workshopId]) {
-      var itemSize = parseSize(installedItems[workshopId]['size'])
+      var itemSize = parseSize(installedItems[workshopId].size)
       delete installedItems[workshopId]
 
       if (sizeOnDisk && itemSize) {
-        workshop['SizeOnDisk'] = sizeOnDisk - itemSize
+        workshop.SizeOnDisk = sizeOnDisk - itemSize
       }
     }
 
